@@ -19,7 +19,8 @@ header {
     border-bottom: solid white 1px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 100px;
     width: 100%;
     height: 80px;
     background-color: var(--backColor);
@@ -28,11 +29,12 @@ header {
   }
 
 svg {
+    margin-left: 50px;
     height: 50px;
     width: auto;
     filter: drop-shadow( 0px 0px 5px rgba(186, 25, 25, 0.7));
     color: rgb(73, 127, 215);
-    transition: all 400ms ease-in-out;
+    transition: filter 400ms ease-in-out;
 }
 
 hr {
@@ -56,7 +58,28 @@ header li {
 
 header li:hover {
     color: var(--textColor);
-    text-shadow: 0px 0px 2px gold;
+    transform: scale(103%);
+}
+
+/* set text shadows for nav elements */
+header li:nth-child(1):hover {
+    text-shadow: 0px 0px 5px gold;
+}
+
+header li:nth-child(2):hover {
+    text-shadow: 0px 0px 5px rgb(16, 175, 16);
+}
+
+header li:nth-child(3):hover {
+    text-shadow: 0px 0px 5px rgb(73, 127, 215);
+}
+
+header li:nth-child(4):hover {
+    text-shadow: 0px 0px 5px rgb(139, 52, 190);
+}
+
+header li:nth-child(5):hover {
+    text-shadow: 0px 0px 5px white;
 }
 
 a {

@@ -27,7 +27,11 @@ console.log(navItems[0].shadow);
 
 navItems.forEach((item) => {
   item.element.addEventListener("mouseover", () => {
-    console.log(item.shadow);
     headerLogo.style.filter = item.shadow;
+  });
+
+  item.element.addEventListener("mouseout", () => {
+    console.log(item.shadow);
+    headerLogo.style.filter = "none";
   });
 });
