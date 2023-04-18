@@ -5,12 +5,46 @@
     --textColor: white;
 }
 
+main {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 
 body {
+    margin: 0px;
     background-color: var(--backColor);
     color: var(--textColor);
     box-sizing: border-box;
     font-family: "Montserrat";
+}
+
+
+
+#colorBlock {
+    position: absolute;
+    left: -120%;
+    width: 100%;
+    height: 1000px;
+    transform: rotate(-35deg);
+    background-color: rgba(186, 25, 25, 0.15);
+    transition: all 300ms ease-in-out;
+}
+
+
+
+@keyframes swoop {
+
+    99% {
+        left: 0%;
+        opacity: 0%;
+    }
+    100% {
+        left: 120%;
+        opacity: 100%;
+    }
+
 }
 
 header {
@@ -26,7 +60,9 @@ header {
     background-color: var(--backColor);
     color: var(--textColor);
     padding: 20px;
+    overflow: hidden;
   }
+
 
 svg {
     margin-left: 50px;
@@ -42,10 +78,11 @@ hr {
 }
 
 nav {
+    z-index: 100;
     margin-right: 5%;
 }
 
-ul {
+header ul {
     display: flex;
     list-style-type: none;
     gap: 30px;
@@ -85,4 +122,24 @@ header li:nth-child(5):hover {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.mainContent {
+    padding-top: 15vh;
+    margin: 0px 17% 10% 17%;
+}
+
+#aboutPageH1 {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#aboutPageH1 > li {
+    transition: all 300ms ease-in-out;
+    color: rgb(210, 210, 210);
+}
+
+#aboutPageH1 > li:hover {
+    transform: scale(103%);
+    color: rgb(73, 127, 215);
 }
