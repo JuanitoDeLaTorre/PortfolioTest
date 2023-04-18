@@ -5,6 +5,10 @@
     --textColor: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 main {
     box-sizing: border-box;
     margin: 0px;
@@ -61,6 +65,7 @@ header {
     color: var(--textColor);
     padding: 20px;
     overflow: hidden;
+    margin-bottom: 150px;
   }
 
 
@@ -85,17 +90,23 @@ nav {
 header ul {
     display: flex;
     list-style-type: none;
-    gap: 30px;
+    gap: 50px;
 }
 
 header li {
+    box-sizing: border-box;
     color: rgb(218, 218, 218);
-    transition: all 200ms ease-in-out;
+    transition: text-shadow 200ms ease-in-out;
+    /* margin: -1px; */
+    padding-bottom: 5px;
 }
 
 header li:hover {
     color: var(--textColor);
-    transform: scale(103%);
+    /* transform: scale(103%); */
+    margin-bottom: -1px;
+    border-bottom: solid rgba(255,255,255,0.7) 1px;
+    /* box-shadow: 0 0 0 1px white; */
 }
 
 /* set text shadows for nav elements */
@@ -162,6 +173,7 @@ a {
     top: 0;
     opacity: 0;
     transition: opacity 400ms ease-in-out;
+    line-height: 200%;
 }
 
 #theMyth {
@@ -188,4 +200,9 @@ a {
 }
     100% {opacity: 100%}
 } */
+
+#aboutH1 {
+    opacity: 0;
+    transition: all 1000ms ease-in-out;
+}
 

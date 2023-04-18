@@ -1,8 +1,10 @@
 const headerLogo = document.querySelector("#logo");
 const header = document.querySelector("#header");
+console.log(header);
 const colorBlock = document.querySelector("#colorBlock");
 
 const aboutContainer = document.querySelector(".aboutContainer");
+const aboutH1 = document.querySelector("#aboutH1");
 
 const theMan = document.querySelector("#theMan");
 const theMyth = document.querySelector("#theMyth");
@@ -39,6 +41,32 @@ function trimColor(color) {
   return color.replace("rgb(", "").replace(")", "");
 }
 
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// header.addEventListener("mouseover", () => {
+//   console.log("hi");
+//   console.log(isInViewport(document.querySelector("#swag")));
+// });
+
+setInterval(() => {
+  if (isInViewport(aboutH1)) {
+    about.style.borderBottom = "solid white 1px";
+    aboutH1.style.opacity = "1";
+  } else {
+    about.style.borderBottom = "none";
+  }
+  console.log(isInViewport(aboutContainer));
+}, 1000);
+
 navItems.forEach((item) => {
   item.element.addEventListener("mouseover", () => {
     headerLogo.style.filter = `drop-shadow( 0px 0px 8px ${item.shadow})`;
@@ -59,6 +87,7 @@ navItems.forEach((item) => {
 });
 
 [theManLI, theMythLI, theLegendLI].forEach((item) => {
+  console.log(item);
   item.addEventListener("mouseover", () => {
     if (item == theManLI) {
       theMan.style.opacity = "1";
