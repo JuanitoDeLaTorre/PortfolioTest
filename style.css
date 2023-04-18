@@ -129,9 +129,16 @@ a {
     margin: 0px 17% 10% 17%;
 }
 
+.aboutContainer {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
 #aboutPageH1 {
     list-style-type: none;
     padding-left: 0;
+    width: 300px;
 }
 
 #aboutPageH1 > li {
@@ -143,3 +150,42 @@ a {
     transform: scale(103%);
     color: rgb(73, 127, 215);
 }
+
+#aboutPageH1 > li > h1 {
+    margin: 0;
+    padding: 0.67em;
+}
+
+#theMan {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+}
+
+#theMyth {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+
+}
+
+#theLegend {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    transition: opacity 400ms ease-in-out;
+}
+
+/* @keyframes reveal {
+    0% {
+    display: block;
+    opacity: 0%;
+}
+    100% {opacity: 100%}
+} */
+

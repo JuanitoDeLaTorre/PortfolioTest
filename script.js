@@ -2,6 +2,16 @@ const headerLogo = document.querySelector("#logo");
 const header = document.querySelector("#header");
 const colorBlock = document.querySelector("#colorBlock");
 
+const aboutContainer = document.querySelector(".aboutContainer");
+
+const theMan = document.querySelector("#theMan");
+const theMyth = document.querySelector("#theMyth");
+const theLegend = document.querySelector("#theLegend");
+
+const theManLI = document.querySelector("#theManLI");
+const theMythLI = document.querySelector("#theMythLI");
+const theLegendLI = document.querySelector("#theLegendLI");
+
 const home = document.querySelector("#home");
 const homeShadow = "rgb(218, 187, 14)"; //gold
 
@@ -46,4 +56,35 @@ navItems.forEach((item) => {
 
     colorBlock.style.animation = "none";
   });
+});
+
+[theManLI, theMythLI, theLegendLI].forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    if (item == theManLI) {
+      theMan.style.opacity = "1";
+
+      theMyth.style.opacity = "0";
+      theLegend.style.opacity = "0";
+    } else if (item == theMythLI) {
+      theMyth.style.opacity = "1";
+
+      theMan.style.opacity = "0";
+      theLegend.style.opacity = "0";
+    } else if (item == theLegendLI) {
+      theLegend.style.opacity = "1";
+
+      theMan.style.opacity = "0";
+      theMyth.style.opacity = "0";
+    }
+  });
+});
+
+aboutContainer.addEventListener("mouseout", () => {
+  //   [theMan, theMyth, theLegend].forEach((item) => {
+  //     item.style.opacity = "0";
+  //   });
+
+  theMan.style.opacity = "1";
+  theMyth.style.opacity = "0";
+  theLegend.style.opacity = "0";
 });
